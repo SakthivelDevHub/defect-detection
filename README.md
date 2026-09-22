@@ -1,3 +1,11 @@
+## Live Demo
+
+[Open the deployed AI Defect Detection application](https://defect-detection-43c7.onrender.com/)
+
+> The application uses Render's free service and may take approximately
+> one minute to wake after a period of inactivity.
+
+
 # AI-Powered Defect Detection
 
 A full-stack deep-learning application that classifies grayscale product images into four categories: **normal**, **scratch**, **crack**, and **stain**. The application accepts PNG or JPEG uploads through a browser, preprocesses each image to match the model input, and returns the predicted class with a confidence percentage. It uses a custom PyTorch convolutional neural network (CNN), a FastAPI backend, an HTML/CSS/JavaScript frontend, and Docker for reproducible deployment.
@@ -245,4 +253,4 @@ The exact response may contain additional fields depending on the current implem
 - [x] End-to-end prediction smoke test
 - [x] Git repository and versioned commits
 - [x] GitHub repository
-- [ ] Online deployment
+- [x] Online deployment
