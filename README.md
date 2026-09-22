@@ -243,6 +243,6 @@ The exact response may contain additional fields depending on the current implem
 - [x] About Project landing page
 - [x] Docker image and local container testing
 - [x] End-to-end prediction smoke test
-- [ ] Git repository and versioned commits
-- [ ] GitHub repository
+- [x] Git repository and versioned commits
+- [x] GitHub repository
 - [ ] Online deployment
