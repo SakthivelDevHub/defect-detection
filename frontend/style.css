@@ -1,0 +1,406 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+}
+
+.container {
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    margin: 20px 0;
+}
+
+#imagePreview {
+    display: none;
+    width: 200px;
+    height: 200px;
+    margin: 10px auto 20px;
+    object-fit: contain;
+    border: 1px solid #dddddd;
+}
+
+button {
+    padding: 12px 30px;
+    color: white;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#result {
+    display: none;
+    margin-top: 25px;
+}
+
+#statusMessage {
+    margin-top: 20px;
+}
+
+
+nav {
+    margin-bottom: 25px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.about-content {
+    text-align: left;
+}
+
+.about-content h2 {
+    margin-top: 25px;
+    color: #1f2937;
+}
+
+.about-content p,
+.about-content li {
+    line-height: 1.6;
+}
+
+
+
+
+.landing-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    color: #2563eb;
+}
+
+.hero {
+    max-width: 750px;
+    margin: 90px auto;
+    text-align: center;
+}
+
+.hero-tag {
+    color: #2563eb;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 20px 0;
+    font-size: 48px;
+    color: #111827;
+}
+
+.hero-description {
+    margin-bottom: 40px;
+    color: #4b5563;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.model-button {
+    display: inline-block;
+    padding: 15px 28px;
+    color: white;
+    background-color: #2563eb;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.model-button:hover {
+    background-color: #1d4ed8;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.project-section {
+    margin: 70px 0;
+    text-align: center;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    padding: 25px;
+    text-align: left;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step-card span {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.step-card p {
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.technology-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.technology-list span {
+    padding: 10px 18px;
+    color: #1d4ed8;
+    background-color: #dbeafe;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.accuracy {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
+   APPLE-STYLE ANIMATED BACKGROUND
+   ========================================================= */
+
+body,
+.landing-page {
+    position: relative;
+    isolation: isolate;
+    background-color: #f5f5f7;
+}
+
+/* Moving gradient layer */
+/* =========================================================
+   BLUE–ORANGE RIBBED GRADIENT BACKGROUND
+   ========================================================= */
+
+body,
+.landing-page {
+    position: relative;
+    isolation: isolate;
+    background-color: #082657;
+}
+
+/* Main gradient and vertical light strips */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -5%;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        /* Vertical ribbed lines */
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 0px,
+            rgba(255, 255, 255, 0.18) 5px,
+            rgba(0, 23, 65, 0.08) 5px,
+            rgba(0, 23, 65, 0.08) 16px
+        ),
+
+        /* Dark navy bottom-left */
+        radial-gradient(
+            ellipse at 8% 90%,
+            rgba(2, 24, 76, 0.98) 0%,
+            rgba(2, 24, 76, 0.75) 28%,
+            transparent 58%
+        ),
+
+        /* Red and orange bottom-right */
+        radial-gradient(
+            ellipse at 82% 82%,
+            rgba(255, 63, 22, 0.92) 0%,
+            rgba(255, 106, 24, 0.65) 35%,
+            transparent 68%
+        ),
+
+        /* Bright cream light near the top */
+        radial-gradient(
+            ellipse at 68% 5%,
+            rgba(255, 242, 190, 0.95) 0%,
+            rgba(255, 222, 128, 0.60) 35%,
+            transparent 64%
+        ),
+
+        /* Main left-to-right color gradient */
+        linear-gradient(
+            110deg,
+            #0879b4 0%,
+            #39b4d1 24%,
+            #8cd9dc 39%,
+            #ffe09c 61%,
+            #ffad3b 79%,
+            #ff551f 100%
+        );
+
+    background-blend-mode:
+        soft-light,
+        normal,
+        normal,
+        screen,
+        normal;
+
+    animation: gradientMovement 18s ease-in-out infinite alternate;
+}
+
+/* Do not blur the vertical lines */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(2, 20, 65, 0.12)
+    );
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Very slow background movement */
+@keyframes gradientMovement {
+    0% {
+        transform: translateX(-1%) scale(1.04);
+    }
+
+    50% {
+        transform: translateX(1.5%) scale(1.07);
+    }
+
+    100% {
+        transform: translateX(-0.5%) scale(1.05);
+    }
+}
+
+/* =========================================================
+   GLASS PANELS
+   ========================================================= */
+
+.container,
+.step-card {
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 20px 50px rgba(31, 38, 135, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.navbar {
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(31, 38, 135, 0.1);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* Apple-style button */
+.model-button,
+button {
+    background: linear-gradient(
+        135deg,
+        #007aff,
+        #5856d6
+    );
+
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.25);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.model-button:hover,
+button:hover {
+    background: linear-gradient(
+        135deg,
+        #006ee6,
+        #4a48c4
+    );
+
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 122, 255, 0.32);
+}
+
+
+/* Disable movement for users who prefer reduced animation */
+@media (prefers-reduced-motion: reduce) {
+    body::before {
+        animation: none;
+    }
+}
+
+.container,
+.step-card,
+.navbar {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow: 0 20px 45px rgba(3, 20, 60, 0.20);
+}

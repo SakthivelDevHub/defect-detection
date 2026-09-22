@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Defect Detection</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="landing-page">
+
+    <main class="landing-container">
+
+        <nav class="navbar">
+            <h2>DefectAI</h2>
+
+            <div>
+                <a href="/">About Project</a>
+                <a href="/model">Try Model</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+
+            <p class="hero-tag">AI-POWERED QUALITY INSPECTION</p>
+
+            <h1>
+                Detect manufacturing defects using deep learning
+            </h1>
+
+            <p class="hero-description">
+                This project uses a Convolutional Neural Network to
+                automatically classify product images as normal,
+                scratch, crack or stain.
+            </p>
+
+            <a class="model-button" href="/model">
+                See My Model in Action →
+            </a>
+
+        </section>
+
+        <section class="project-section">
+
+            <h2>How the Project Works</h2>
+
+            <div class="steps">
+
+                <article class="step-card">
+                    <span>01</span>
+                    <h3>Upload Image</h3>
+                    <p>
+                        The user selects a PNG or JPEG image of a
+                        factory product.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span>02</span>
+                    <h3>CNN Analysis</h3>
+                    <p>
+                        The image is converted to grayscale, resized
+                        to 32 × 32 and passed through the CNN.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span>03</span>
+                    <h3>View Result</h3>
+                    <p>
+                        The application displays the predicted defect
+                        category and confidence percentage.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="project-section">
+
+            <h2>Technologies Used</h2>
+
+            <div class="technology-list">
+                <span>PyTorch</span>
+                <span>FastAPI</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Docker</span>
+            </div>
+
+            <p class="accuracy">
+                Model test accuracy: <strong>90.56%</strong>
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

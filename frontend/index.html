@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Defect Detection</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+      <nav>
+        <a href="/">About Project</a>
+        <a href="/model">Try Model</a>
+      </nav>
+        <h1>Defect Detection</h1>
+        <p>Upload an image to detect its defect type.</p>
+
+        <form id="predictionForm">
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/png, image/jpeg"
+                required
+            >
+
+            <img
+                id="imagePreview"
+                alt="Selected image preview"
+            >
+
+            <button type="submit">
+                Predict
+            </button>
+
+        </form>
+
+        <p id="statusMessage"></p>
+
+        <section id="result">
+            <h2>Prediction: <span id="label"></span></h2>
+            <h3>Confidence: <span id="confidence"></span>%</h3>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
