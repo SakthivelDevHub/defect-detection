@@ -3,51 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Defect Detection</title>
-
+    <meta name="description" content="Upload a surface image and classify manufacturing defects with a trained CNN.">
+    <title>Inspect Image | DefectAI</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
-<body>
+<body class="model-page">
+    <main class="app-shell">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="/" aria-label="DefectAI home">
+                <span class="brand-mark" aria-hidden="true">D</span>
+                <span>DefectAI</span>
+            </a>
 
-    <main class="container">
-      <nav>
-        <a href="/">About Project</a>
-        <a href="/model">Try Model</a>
-      </nav>
-        <h1>Defect Detection</h1>
-        <p>Upload an image to detect its defect type.</p>
+            <div class="nav-links">
+                <a href="/">About Project</a>
+                <a class="active" href="/model" aria-current="page">Try Model</a>
+            </div>
+        </nav>
 
-        <form id="predictionForm">
+        <header class="model-header">
+            <p class="eyebrow">AI-POWERED QUALITY INSPECTION</p>
+            <h1>Inspect a surface image</h1>
+            <p>
+                Upload a product image and the trained CNN will classify it as
+                normal, scratch, crack or stain.
+            </p>
+        </header>
 
-            <input
-                type="file"
-                id="imageInput"
-                accept="image/png, image/jpeg"
-                required
-            >
+        <section class="inspection-panel" aria-label="Defect inspection tool">
+            <div class="upload-column">
+                <div class="section-heading">
+                    <span class="step-number">01</span>
+                    <div>
+                        <h2>Select an image</h2>
+                        <p>PNG or JPEG, up to 10 MB</p>
+                    </div>
+                </div>
 
-            <img
-                id="imagePreview"
-                alt="Selected image preview"
-            >
+                <form id="predictionForm" novalidate>
+                    <label class="drop-zone" id="dropZone" for="imageInput" tabindex="0">
+                        <input type="file" id="imageInput" accept="image/png, image/jpeg" required>
 
-            <button type="submit">
-                Predict
-            </button>
+                        <div class="upload-prompt" id="uploadPrompt">
+                            <span class="upload-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/>
+                                </svg>
+                            </span>
+                            <strong>Drop your image here</strong>
+                            <span>or click to browse your computer</span>
+                        </div>
 
-        </form>
+                        <div class="preview-wrapper" id="previewWrapper" hidden>
+                            <img id="imagePreview" alt="Selected surface image preview">
+                            <div class="file-details">
+                                <strong id="fileName"></strong>
+                                <span id="fileSize"></span>
+                            </div>
+                        </div>
+                    </label>
 
-        <p id="statusMessage"></p>
+                    <p id="statusMessage" class="status-message" role="status" aria-live="polite"></p>
 
-        <section id="result">
-            <h2>Prediction: <span id="label"></span></h2>
-            <h3>Confidence: <span id="confidence"></span>%</h3>
+                    <div class="form-actions">
+                        <button id="predictButton" class="primary-button" type="submit" disabled>
+                            <span class="button-text">Analyze Image</span>
+                            <span class="spinner" aria-hidden="true"></span>
+                        </button>
+                        <button id="resetButton" class="secondary-button" type="button" hidden>
+                            Choose Another
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="result-column">
+                <div class="section-heading">
+                    <span class="step-number">02</span>
+                    <div>
+                        <h2>Inspection result</h2>
+                        <p>The model's highest-confidence classification</p>
+                    </div>
+                </div>
+
+                <div class="result-placeholder" id="resultPlaceholder">
+                    <span class="scan-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 3H5a2 2 0 0 0-2 2v2m14-4h2a2 2 0 0 1 2 2v2M7 21H5a2 2 0 0 1-2-2v-2m14 4h2a2 2 0 0 0 2-2v-2M7 12h10"/>
+                        </svg>
+                    </span>
+                    <strong>Awaiting analysis</strong>
+                    <p>Your prediction will appear here after you upload and analyze an image.</p>
+                </div>
+
+                <article id="result" class="result-card" hidden>
+                    <div class="result-status">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span>ANALYSIS COMPLETE</span>
+                    </div>
+                    <p class="result-label-caption">Predicted class</p>
+                    <h2 id="label"></h2>
+
+                    <div class="confidence-row">
+                        <span>Model confidence</span>
+                        <strong><span id="confidence"></span>%</strong>
+                    </div>
+                    <div class="confidence-track" role="progressbar" aria-label="Prediction confidence"
+                        aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <span id="confidenceBar"></span>
+                    </div>
+                    <p class="result-note">
+                        Confidence describes this prediction; it is not the model's overall accuracy.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="class-strip" aria-label="Supported classifications">
+            <span>Supported classes</span>
+            <ul>
+                <li><i class="class-dot normal"></i>Normal</li>
+                <li><i class="class-dot scratch"></i>Scratch</li>
+                <li><i class="class-dot crack"></i>Crack</li>
+                <li><i class="class-dot stain"></i>Stain</li>
+            </ul>
         </section>
     </main>
 
     <script src="/static/script.js"></script>
-
 </body>
 </html>
