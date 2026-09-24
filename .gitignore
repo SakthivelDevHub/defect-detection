@@ -26,3 +26,4 @@ test_samples/
 
 # Temporary prediction images
 new_image.png
+code .gitignore
